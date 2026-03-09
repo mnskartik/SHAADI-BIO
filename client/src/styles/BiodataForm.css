@@ -1,0 +1,268 @@
+body{
+background:#f7f4f2;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* MAIN SPLIT SCREEN */
+
+.biodata-layout{
+display:grid;
+grid-template-columns:45% 55%;
+height:100vh;
+}
+
+/* LEFT SIDE FORM */
+
+.form-section{
+padding:40px;
+overflow-y:auto;
+background:white;
+border-right:1px solid #eee;
+}
+
+.form-section h1{
+color:#6b2c1f;
+margin-bottom:20px;
+}
+
+.form-section h3{
+margin-top:25px;
+color:#8b3a2b;
+}
+
+/* INPUTS */
+
+.form-section input,
+.form-section textarea,
+.form-section select{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:12px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+transition:0.2s;
+}
+
+.form-section input:focus,
+.form-section textarea:focus,
+.form-section select:focus{
+outline:none;
+border-color:#8b3a2b;
+box-shadow:0 0 4px rgba(139,58,43,0.3);
+}
+
+.form-section textarea{
+height:80px;
+}
+
+/* TEMPLATE SELECT */
+
+.template-select{
+background:#fff7f5;
+border:1px solid #8b3a2b;
+font-weight:500;
+}
+
+/* PHOTO INPUT */
+
+.form-section input[type="file"]{
+padding:10px;
+border:none;
+}
+
+/* RIGHT SIDE PREVIEW */
+
+.preview-section{
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:40px;
+overflow-y:auto;
+background:#f3f0ee;
+}
+
+/* PREVIEW CARD */
+
+.preview-card{
+background:white;
+padding:30px;
+width:380px;
+max-width:100%;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+border-radius:10px;
+}
+
+/* BUTTON */
+
+.download-btn{
+margin-top:20px;
+padding:14px 22px;
+background:#8b3a2b;
+color:white;
+border:none;
+border-radius:6px;
+font-size:15px;
+cursor:pointer;
+}
+
+.download-btn:hover{
+background:#6f2e22;
+}
+
+label{
+font-size:13px;
+font-weight:500;
+margin-top:10px;
+}
+
+input[type="color"]{
+height:40px;
+padding:5px;
+}
+.save-btn{
+margin-top:20px;
+padding:14px 20px;
+width:100%;
+font-size:15px;
+font-weight:600;
+border:none;
+border-radius:8px;
+cursor:pointer;
+
+background:linear-gradient(135deg,#8b3a2b,#c55a45);
+color:white;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+
+box-shadow:0 6px 14px rgba(0,0,0,0.15);
+
+transition:all 0.25s ease;
+}
+
+/* hover */
+
+.save-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,0,0,0.25);
+background:linear-gradient(135deg,#7a3124,#b84c39);
+}
+
+/* click */
+
+.save-btn:active{
+transform:scale(0.97);
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
+}
+
+
+/* ------------------------- */
+/* TABLET RESPONSIVE */
+/* ------------------------- */
+
+@media (max-width: 1024px){
+
+.biodata-layout{
+grid-template-columns:1fr;
+height:auto;
+}
+
+.form-section{
+border-right:none;
+border-bottom:1px solid #eee;
+}
+
+.preview-section{
+padding:30px;
+}
+
+.preview-card{
+width:100%;
+max-width:500px;
+}
+
+}
+
+/* ------------------------- */
+/* MOBILE RESPONSIVE */
+/* ------------------------- */
+
+@media (max-width: 600px){
+
+.form-section{
+padding:20px;
+}
+
+.preview-section{
+padding:20px;
+}
+
+.form-section h1{
+font-size:24px;
+}
+
+.form-section h3{
+font-size:18px;
+}
+
+.form-section input,
+.form-section textarea,
+.form-section select{
+font-size:13px;
+padding:10px;
+}
+
+.download-btn{
+width:100%;
+font-size:14px;
+padding:12px;
+}
+
+.save-btn{
+margin-top:20px;
+padding:14px 20px;
+width:100%;
+font-size:15px;
+font-weight:600;
+border:none;
+border-radius:8px;
+cursor:pointer;
+
+background:linear-gradient(135deg,#8b3a2b,#c55a45);
+color:white;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+
+box-shadow:0 6px 14px rgba(0,0,0,0.15);
+
+transition:all 0.25s ease;
+}
+
+/* hover */
+
+.save-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,0,0,0.25);
+background:linear-gradient(135deg,#7a3124,#b84c39);
+}
+
+/* click */
+
+.save-btn:active{
+transform:scale(0.97);
+box-shadow:0 3px 8px rgba(0,0,0,0.2);
+}
+
+.preview-card{
+padding:20px;
+}
+
+}
