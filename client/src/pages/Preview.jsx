@@ -4,7 +4,7 @@ import { db } from "../firebase";
 import { useParams } from "react-router-dom";
 
 import ClassicTemplate from "../templates/ClassicTemplate";
-import ModernTemplate from "../templates/ModernTemplate";
+
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
