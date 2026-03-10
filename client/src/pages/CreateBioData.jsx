@@ -18,27 +18,26 @@ const CreateBiodata = () => {
 
 useEffect(() => {
 
-  const fetchBiodata = async () => {
+  const fetchBiodatas = async () => {
 
-    if(!id) return;
+  try{
 
-    const docRef = doc(db,"biodatas",id);
-    const docSnap = await getDoc(docRef);
+    const snapshot = await getDocs(collection(db,"biodatas"));
 
-    if(docSnap.exists()){
-      const data = docSnap.data();
+    const data = snapshot.docs.map((doc)=>({
+      id:doc.id,
+      ...doc.data() 
+    }));
 
-      setFormData({
-        ...formData,
-        ...data
-      });
+    setBiodatas(data);   
 
-      if(data.photo){
-        setPhotoPreview(data.photo);
-      }
-    }
+  }catch(error){
 
-  };
+    console.error("Error fetching biodatas",error);
+
+  }
+
+};
 
   fetchBiodata();
 

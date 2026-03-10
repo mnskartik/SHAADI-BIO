@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CreateBiodata from "./pages/CreateBioData";
 import Dashboard from "./pages/Dashboard";
+import Preview from "./pages/Preview";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
@@ -17,6 +18,8 @@ function App() {
       <Navbar />
 
       <Routes>
+         <Route path="/" element={<Home />} />
+
 
         <Route path="/login" element={<Login />} />
 
@@ -48,6 +51,14 @@ element={
   </ProtectedRoute>
 }
 />
+        <Route
+          path="/preview/:id"
+          element={
+            <ProtectedRoute>
+              <Preview />
+            </ProtectedRoute>
+          }
+        />
 
       </Routes>
 
