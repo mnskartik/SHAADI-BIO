@@ -1,70 +1,161 @@
-# Getting Started with Create React App
+# 💍 ShaadiBio – Marriage Biodata Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ShaadiBio is a modern web application that helps users create, customize, and download professional marriage biodata templates in minutes.  
+It provides a clean interface, live preview, customizable templates, and Firebase-powered authentication and storage.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🔐 **User Authentication** (Firebase Email/Password)
+- 🧾 **Create Marriage Biodata**
+- 📝 **Edit Existing Biodata**
+- 🗑 **Delete Biodata**
+- 📄 **Download Biodata as PDF**
+- 🎨 **Template Customization**
+  - Change colors
+  - Change fonts
+- 👀 **Live Biodata Preview**
+- 📊 **Dashboard to Manage Biodatas**
+- 📱 **Responsive Design**
+- 🔒 **Protected Routes**
+- 🍔 **Mobile Hamburger Navigation**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🖥 Demo Workflow
 
-### `npm test`
+1. Register/Login
+2. Go to Dashboard
+3. Create Biodata
+4. Customize template
+5. Preview biodata
+6. Save biodata
+7. Download as PDF
+8. Edit or delete later from Dashboard
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- React
+- React Router
+- CSS3
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend / Database
+- Firebase Authentication
+- Firebase Firestore
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Libraries
+- html2canvas
+- jsPDF
+- React Icons
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📂 Project Structure
+shaadi/
+│
+├── client
+│
+├── src
+│ ├── components
+│ │ ├── Navbar.jsx
+│ │ └── ProtectedRoute.jsx
+│ │
+│ ├── pages
+│ │ ├── Login.jsx
+│ │ ├── Register.jsx
+│ │ ├── Dashboard.jsx
+│ │ └── CreateBiodata.jsx
+│ │
+│ ├── templates
+│ │ ├── ClassicTemplate.jsx
+│ │ └── ModernTemplate.jsx
+│ │
+│ ├── styles
+│ │ ├── Auth.css
+│ │ ├── BiodataForm.css
+│ │ ├── Dashboard.css
+│ │ └── Navbar.css
+│ │
+│ ├── firebase.js
+│ ├── App.js
+│ └── index.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ⚙ Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1️⃣ Clone the repository
 
-## Learn More
+```bash
+git clone https://github.com/YOUR_USERNAME/shaadibio.git
+2️⃣ Navigate to project
+cd shaadibio/client
+3️⃣ Install dependencies
+npm install
+4️⃣ Start development server
+npm start
+🔑 Firebase Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a Firebase project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Enable Authentication → Email/Password
 
-### Code Splitting
+Enable Firestore Database
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Add your Firebase config inside:
 
-### Analyzing the Bundle Size
+src/firebase.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Example:
 
-### Making a Progressive Web App
+const firebaseConfig = {
+apiKey: "YOUR_API_KEY",
+authDomain: "YOUR_PROJECT.firebaseapp.com",
+projectId: "YOUR_PROJECT_ID",
+storageBucket: "YOUR_PROJECT.appspot.com",
+messagingSenderId: "XXXX",
+appId: "XXXX"
+};
+📱 Responsive Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application is fully responsive and supports:
 
-### Advanced Configuration
+Desktop
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Tablet
 
-### Deployment
+Mobile devices
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🔒 Authentication Flow
 
-### `npm run build` fails to minify
+Protected pages include:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dashboard
+
+Create Biodata
+
+Edit Biodata
+
+Users must be logged in to access them.
+
+📌 Future Improvements
+
+Public shareable biodata links
+
+Multiple biodata templates
+
+Profile photo storage in Firebase Storage
+
+Search & filter in dashboard
+
+Export biodata as DOCX
+
+Template marketplace
+
+👨‍💻 Author
+
+Developed by Kartik
