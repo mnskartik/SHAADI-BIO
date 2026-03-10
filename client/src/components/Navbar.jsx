@@ -11,9 +11,15 @@ const Navbar = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  if(location.pathname === "/login" || location.pathname === "/register"){
-    return null;
-  }
+
+
+if (
+  location.pathname === "/" ||
+  location.pathname === "/login" ||
+  location.pathname === "/register"
+) {
+  return null;
+}
 
   const handleLogout = async () => {
 

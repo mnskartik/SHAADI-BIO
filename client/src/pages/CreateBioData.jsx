@@ -16,33 +16,45 @@ const CreateBiodata = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+
+
 useEffect(() => {
 
-  const fetchBiodatas = async () => {
+  const fetchBiodata = async () => {
 
-  try{
+    if(!id) return;
 
-    const snapshot = await getDocs(collection(db,"biodatas"));
+    try{
 
-    const data = snapshot.docs.map((doc)=>({
-      id:doc.id,
-      ...doc.data() 
-    }));
+      const docRef = doc(db,"biodatas",id);
+      const docSnap = await getDoc(docRef);
 
-    setBiodatas(data);   
+      if(docSnap.exists()){
 
-  }catch(error){
+        const data = docSnap.data();
 
-    console.error("Error fetching biodatas",error);
+        setFormData((prev)=>({
+          ...prev,
+          ...data
+        }));
 
-  }
+        if(data.photo){
+          setPhotoPreview(data.photo);
+        }
 
-};
+      }
+
+    }catch(error){
+
+      console.error("Error loading biodata",error);
+
+    }
+
+  };
 
   fetchBiodata();
 
 },[id]);
-
 const saveBiodata = async () => {
 
   try{
@@ -273,5 +285,6 @@ theme={theme}
     </div>
   );
 };
+
 
 export default CreateBiodata;
